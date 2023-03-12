@@ -1,30 +1,7 @@
-import { useState } from "react";
 import trpc from "./utils/trpc";
 
 const App = () => {
-  const exampleRequest = trpc.example.useQuery(undefined, {
-    enabled: false,
-  });
-  const requestWithArgs = trpc.exampleWithArgs.useMutation({});
-  const [isLoading, setIsLoading] = useState(false);
-  const [hasError, setHasError] = useState(false);
-  const [data, setData] = useState<string | null>(null);
-
-  const onClick = async () => {
-    setIsLoading(true);
-
-    const [p1, p2] = await Promise.all([
-      await exampleRequest.refetch(),
-      await requestWithArgs.mutateAsync({ message: "hello" }),
-    ]);
-    const { data } = p1;
-    const { info } = p2;
-    const hasAllData = Boolean(data?.info && info);
-
-    if (p1.isError) setHasError(true);
-    setIsLoading(!hasAllData);
-    setData("hello from tRPC procedure!");
-  };
+  const { isLoading } = trpc.example.useQuery();
 
   return (
     <main className="w-screen h-screen flex-col justify-center flex items-center">
@@ -58,28 +35,13 @@ const App = () => {
       </a>
       <h1 className="text-2xl mt-4 font-bold mb-4 border-b pb-4">viteRPC</h1>
       <p>Vite + tRPC + TailwindCSS template</p>
-      <button
-        onClick={onClick}
-        className={`
-          h-10 first-letter:capitalize mt-4 block rounded-full px-6 text-white ${
-            isLoading
-              ? "bg-blue-500 cursor-not-allowed opacity-75"
-              : "cursor-pointer bg-blue-600 hover:bg-blue-700"
-          } transition-colors ease-in-out duration-200
-        `}
+      <p
+        className={`mt-2 text-sm ${
+          isLoading ? "text-orange-400" : "text-green-600"
+        } first-letter:capitalize`}
       >
-        fetch data
-      </button>
-      {hasError && (
-        <p className="mt-2 text-sm text-red-500 first-letter:capitalize">
-          some error occured :(
-        </p>
-      )}
-      {data && (
-        <p className="mt-2 text-sm text-green-700 first-letter:capitalize">
-          {data}
-        </p>
-      )}
+        {isLoading ? "loading tRPC query..." : "hello from tRPC procedure!"}
+      </p>
       <a href="https://github.com/mnik01/viteRPC">
         <svg
           aria-hidden="true"
