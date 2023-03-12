@@ -6,13 +6,6 @@ const trpcClient = trpc.createClient({
   links: [
     httpBatchLink({
       url: `${import.meta.env.VITE_TRPC_SERVER_URL}`,
-      // Needed to support session cookies
-      fetch(url, options) {
-        return fetch(url, {
-          ...options,
-          credentials: "include",
-        });
-      },
     }),
   ],
 });
