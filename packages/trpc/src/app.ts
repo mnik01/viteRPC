@@ -13,11 +13,7 @@ const app = express();
 app.use(express.json());
 app.use(
   cors({
-    credentials: true,
-    // TODO: allow only one origin in production
-    origin: (origin, callback) => {
-      callback(null, true);
-    },
+    origin: "https://vite-rpc-react.vercel.app/",
   })
 );
 
