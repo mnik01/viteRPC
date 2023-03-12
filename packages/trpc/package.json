@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon --files src/server.ts",
-    "buid": "tsc",
+    "build": "tsc",
     "start": "node src/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,7 +15,7 @@
   "devDependencies": {
     "nodemon": "^2.0.20",
     "ts-node": "^10.9.1",
-    "tsc": "^2.0.4"
+    "typescript": "^4.9.3"
   },
   "dependencies": {
     "@trpc/server": "^10.0.0",
@@ -25,7 +25,6 @@
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
-    "typescript": "^4.9.3",
     "zod": "^3.19.1"
   }
 }

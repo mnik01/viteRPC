@@ -54,7 +54,6 @@ importers:
       express: ^4.18.2
       nodemon: ^2.0.20
       ts-node: ^10.9.1
-      tsc: ^2.0.4
       typescript: ^4.9.3
       zod: ^3.19.1
     dependencies:
@@ -65,12 +64,11 @@ importers:
       cors: 2.8.5
       dotenv: 16.0.3
       express: 4.18.2
-      typescript: 4.9.3
       zod: 3.19.1
     devDependencies:
       nodemon: 2.0.20
       ts-node: 10.9.1_wup25etrarvlqkprac7h35hj7u
-      tsc: 2.0.4
+      typescript: 4.9.3
 
 packages:
 
@@ -5889,11 +5887,6 @@ packages:
       yn: 3.1.1
     dev: true
 
-  /tsc/2.0.4:
-    resolution: {integrity: sha512-fzoSieZI5KKJVBYGvwbVZs/J5za84f2lSTLPYf6AGiIf43tZ3GNrI1QzTLcjtyDDP4aLxd46RTZq1nQxe7+k5Q==}
-    hasBin: true
-    dev: true
-
   /tsconfig-paths/3.14.1:
     resolution: {integrity: sha512-fxDhWnFSLt3VuTwtvJt5fpwxBHg5AdKWMsgcPOOIilyjymcYVZoCQF8fvFRezCNfblEXmi+PcM1eYHeOAgXCOQ==}
     dependencies:
@@ -5954,6 +5947,7 @@ packages:
     resolution: {integrity: sha512-CIfGzTelbKNEnLpLdGFgdyKhG23CKdKgQPOBc+OUNrkJ2vr+KSzsSV5kq5iWhEQbok+quxgGzrAtGWCyU7tHnA==}
     engines: {node: '>=4.2.0'}
     hasBin: true
+    dev: true
 
   /uglify-js/3.17.4:
     resolution: {integrity: sha512-T9q82TJI9e/C1TAxYvfb16xO120tMVFZrGA3f9/P4424DNu6ypK103y0GPFVa17yotwSyZW5iYXgjYHkGrJW/g==}
